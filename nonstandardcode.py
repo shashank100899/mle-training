@@ -1,6 +1,6 @@
 import os
 import tarfile
-import urllib
+import urllib.request
 
 import numpy as np
 import pandas as pd
@@ -36,7 +36,8 @@ def load_housing_data(housing_path=HOUSING_PATH):
     return pd.read_csv(csv_path)
 
 
-housing = load_housing_data
+fetch_housing_data()
+housing = load_housing_data()
 
 
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
