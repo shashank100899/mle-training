@@ -1,0 +1,47 @@
+
+2022-06-24 17:23:54,853 The ingest_data script stated with logging
+2022-06-24 17:23:54,853 Took the file path from the input
+2022-06-24 17:23:56,183 Extracted the file from the URL and place the/home/shashank1/my_project2/mle-training/datasets_ingest_data/housing
+2022-06-24 17:23:56,183 Stored the data in DataFrame
+2022-06-25 13:46:59,099 The train script stated with logging
+2022-06-25 18:57:16,280 The train script stated with logging
+2022-06-25 18:59:50,340 The train script stated with logging
+2022-06-25 19:01:35,635 The train script stated with logging
+2022-06-25 19:03:35,935 The train script stated with logging
+2022-06-25 19:03:49,371 The train script stated with logging
+2022-06-25 19:04:22,556 The train script stated with logging
+2022-06-25 19:04:31,055 The train script stated with logging
+2022-06-25 19:36:09,607 The train script stated with logging
+2022-06-25 19:37:37,346 The train script stated with logging
+2022-06-25 19:39:03,444 The train script stated with logging
+2022-06-25 19:40:36,119 The train script stated with logging
+2022-06-25 19:48:17,580 The train script stated with logging
+2022-06-25 19:55:00,029 The train script stated with logging
+2022-06-25 19:55:11,025 The train script stated with logging
+2022-06-25 19:58:58,347 The train script stated with logging
+2022-06-25 20:08:18,260 The train script stated with logging
+2022-06-25 20:09:09,934 The train script stated with logging
+2022-06-25 20:11:19,548 The train script stated with logging
+2022-06-25 20:16:23,759 The train script stated with logging
+2022-06-25 22:07:39,110 The train script stated with logging
+2022-06-25 22:08:53,571 The train script stated with logging
+2022-06-25 22:24:33,114 The train script stated with logging
+2022-06-26 12:23:38,314 The ingest_data script stated with logging
+2022-06-26 12:23:38,315 Took the file path from the input
+2022-06-26 12:23:38,868 Extracted the file from the URL and place thehome/shashank1/my_project2/mle_training/datasets_ingest_data/housing
+2022-06-26 12:23:38,868 Stored the data in DataFrame
+2022-06-26 12:25:12,232 The train script stated with logging
+2022-06-26 12:25:12,233 Took the file as the Argument
+2022-06-26 12:26:45,913 The train script stated with logging
+2022-06-26 12:26:45,914 Took the file as the Argument
+2022-06-26 12:26:46,636 Saved the Imputer model using Pickel module
+2022-06-26 12:26:46,827 Saved the linear Regression model using Pickel module
+2022-06-26 12:26:47,042 Saved the Decision Tree Regression model using Pickel module
+2022-06-26 12:26:47,042 Saved the Random Forest Regressor  model using Pickel module
+2022-06-26 12:27:02,313 The score script stated with logging
+2022-06-26 12:27:02,314 loaded all the requied inputs for the Score script
+2022-06-26 12:27:02,337 loaded the Linear Regression model using the pickle module
+2022-06-26 12:27:02,350 Predicted the o/p using Linear Regression module
+2022-06-26 12:27:02,352 loaded the Decision Tree model using pickel module
+2022-06-26 12:27:02,383 loaded the random forest model using pickel module
+2022-06-26 12:29:13,182 Did the Random Search using Random forest module 
