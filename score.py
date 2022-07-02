@@ -19,6 +19,9 @@ from sklearn.model_selection import (
 )
 from sklearn.tree import DecisionTreeRegressor
 
+import mlflow
+import mlflow.sklearn
+
 lg.basicConfig(filename="ingest_data_log.txt", level=lg.INFO, format="%(asctime)s %(message)s")
 
 def logging_msg(s):
@@ -39,10 +42,14 @@ def linear_regression(housing_prepared, housing_labels):
     lin_rmse = np.sqrt(lin_mse)
     lin_rmse
 
+    mlflow.log_metric("linear Regression MSE", lin_rmse)
+
     logging_msg("Predicted the o/p using Linear Regression module")
 
     lin_mae = mean_absolute_error(housing_labels, housing_predictions)
     lin_mae
+
+    mlflow.log_metric("linear Regression MAE", lin_mae)
 
 def decision_tree(housing_prepared, housing_labels):
 
@@ -54,6 +61,7 @@ def decision_tree(housing_prepared, housing_labels):
     tree_mse = mean_squared_error(housing_labels, housing_predictions)
     tree_rmse = np.sqrt(tree_mse)
     tree_rmse
+    mlflow.log_metric("Decision Tree", tree_rmse)
 
 if __name__ == "__main__":
 
@@ -92,6 +100,9 @@ if __name__ == "__main__":
     for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
         print(np.sqrt(-mean_score), params)
 
+    mlflow.log_param("best parameters grid search", rnd_search.best_estimator_)
+    mlflow.log_param("best score grid", rnd_search.best_score_)
+
     param_grid = [
         # try 12 (3×4) combinations of hyperparameters
         {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
@@ -106,6 +117,9 @@ if __name__ == "__main__":
     cvres = grid_search.cv_results_
     for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
         print(np.sqrt(-mean_score), params)
+
+    mlflow.log_param("best parameters random search", grid_search.best_estimator_)
+    mlflow.log_param("best score random", grid_search.best_score_)
 
     feature_importances = grid_search.best_estimator_.feature_importances_
     sorted(zip(feature_importances, housing_prepared.columns), reverse=True)

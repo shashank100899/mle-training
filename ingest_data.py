@@ -6,6 +6,8 @@ import urllib.request
 
 import pandas as pd
 
+import mlflow
+
 
 def logging_msg(s):
     """ This function will take the logging message and load it
@@ -49,3 +51,5 @@ if __name__ == "__main__":
 
     fetch_housing_data(HOUSING_URL, HOUSING_PATH)
     housing = load_housing_data(HOUSING_PATH)
+    mlflow.log_param("URL", DOWNLOAD_ROOT)
+    mlflow.log_param("file_path", HOUSING_PATH)

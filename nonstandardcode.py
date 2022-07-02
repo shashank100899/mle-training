@@ -135,6 +135,7 @@ rnd_search = RandomizedSearchCV(forest_reg, param_distributions=param_distribs,
 rnd_search.fit(housing_prepared, housing_labels)
 cvres = rnd_search.cv_results_
 for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+    print("-------------RandomizedSearchCV----------------")
     print(np.sqrt(-mean_score), params)
 
 
@@ -153,6 +154,7 @@ grid_search.fit(housing_prepared, housing_labels)
 grid_search.best_params_
 cvres = grid_search.cv_results_
 for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+    print("-------------GridSearchCV----------------")
     print(np.sqrt(-mean_score), params)
 
 feature_importances = grid_search.best_estimator_.feature_importances_

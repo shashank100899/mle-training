@@ -1,5 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/shashank1/my_project2/mle-training'
-sphinx-build -M help "source" "build"  
 make: Leaving directory '/home/shashank1/my_project2/mle-training'
  
+make: *** No targets specified and no makefile found.  Stop.
+

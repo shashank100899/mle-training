@@ -1,0 +1,15 @@
+artifact_uri: file:///home/shashank1/my_project2/mle-training/mlruns/0/66804e4295904f93856203704684945b/artifacts
+end_time: 1656786709746
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 66804e4295904f93856203704684945b
+run_uuid: 66804e4295904f93856203704684945b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1656786529278
+status: 3
+tags: []
+user_id: shashank1

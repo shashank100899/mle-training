@@ -17,6 +17,9 @@ from sklearn.model_selection import (
 )
 from sklearn.tree import DecisionTreeRegressor
 
+import mlflow
+import mlflow.sklearn
+
 lg.basicConfig(filename="ingest_data_log.txt", level=lg.INFO, format="%(asctime)s %(message)s")
 
 def logging_msg(s):
@@ -27,7 +30,7 @@ def logging_msg(s):
 def bining(df, c):
     """This function will take a coloumn and create bins based on the given values
     df is the DataFrame and c is the column name"""
-    return pd.cut(df["c"], bins=[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1, 2, 3, 4, 5])
+    return pd.cut(df[c], bins=[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1, 2, 3, 4, 5])
 
 
 if __name__ == "__main__":
@@ -111,6 +114,7 @@ if __name__ == "__main__":
 
     lin_reg = LinearRegression()
     lin_reg.fit(housing_prepared, housing_labels)
+    mlflow.sklearn.log_model(lin_reg, "linear Regression")
 
     with open("/home/shashank1/my_project2/mle-training/models/linear_regression", "wb") as f:
         pickle.dump(lin_reg, f)
@@ -119,6 +123,8 @@ if __name__ == "__main__":
 
     tree_reg = DecisionTreeRegressor(random_state=42)
     tree_reg.fit(housing_prepared, housing_labels)
+
+    mlflow.sklearn.log_model(tree_reg, "Decision Tree Regressor")
 
     with open("/home/shashank1/my_project2/mle-training/models/decision_tree", "wb") as f:
         pickle.dump(tree_reg, f)
@@ -129,5 +135,7 @@ if __name__ == "__main__":
 
     with open("/home/shashank1/my_project2/mle-training/models/ransom_forest", "wb") as f:
         pickle.dump(forest_reg, f)
+
+    mlflow.sklearn.log_model(forest_reg, "Random Forest Regressor")
 
     logging_msg("Saved the Random Forest Regressor  model using Pickel module")
